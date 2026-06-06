@@ -31,8 +31,7 @@ brain-tumor-api/
 ├── Pipfile.lock
 └── README.md
 
-
-**Cara Menjalankan Project**
+**Cara Menjalankan Projek**
 
 Install dependency:
 pipenv install
