@@ -1,0 +1,41 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+.venv/
+.virtualenv/
+.pipenv/
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables
+.env
+
+# Upload folder
+uploads/*
+!uploads/.gitkeep
+
+# Model files
+models/*.h5
+models/*.keras
+models/*.pkl
+models/*.joblib
+
+# Tapi folder models tetap disimpan
+!models/.gitkeep
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
