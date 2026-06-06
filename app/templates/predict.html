@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Prediksi - Sistem Klasifikasi Tumor Otak{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card shadow border-0">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-2">Prediksi Tumor Otak</h3>
+                    <p class="text-muted mb-4">
+                        Upload citra MRI otak dalam format JPG, JPEG, atau PNG.
+                    </p>
+
+                    <div class="alert alert-warning">
+                        Hasil prediksi sistem ini hanya digunakan sebagai pendukung analisis awal dan bukan pengganti diagnosis dokter.
+                    </div>
+
+                    <form id="predictForm">
+                        <div class="mb-3">
+                            <label for="imageInput" class="form-label fw-semibold">Pilih Citra MRI</label>
+                            <input class="form-control" type="file" id="imageInput" name="image" accept="image/png, image/jpeg" required>
+                        </div>
+
+                        <div class="mb-3 d-none" id="previewWrapper">
+                            <label class="form-label fw-semibold">Preview Gambar</label>
+                            <div>
+                                <img id="imagePreview" class="img-preview" alt="Preview gambar MRI">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100" id="predictButton">
+                            Prediksi Sekarang
+                        </button>
+                    </form>
+
+                    <div id="loading" class="text-center mt-4 d-none">
+                        <div class="spinner-border text-primary" role="status"></div>
+                        <p class="mt-2 text-muted">Sedang memproses gambar...</p>
+                    </div>
+
+                    <div id="resultWrapper" class="mt-4 d-none">
+                        <hr>
+
+                        <h5 class="fw-bold mb-3">Hasil Prediksi</h5>
+
+                        <div class="result-box">
+                            <p class="mb-1 text-muted">Kelas Prediksi</p>
+                            <h3 id="predictionResult" class="fw-bold"></h3>
+
+                            <p class="mb-1 text-muted mt-3">Confidence</p>
+                            <h4 id="confidenceResult" class="fw-bold"></h4>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6 class="fw-bold">Probabilitas Semua Kelas</h6>
+                            <div id="probabilityList"></div>
+                        </div>
+                    </div>
+
+                    <div id="errorWrapper" class="alert alert-danger mt-4 d-none"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+{% endblock %}

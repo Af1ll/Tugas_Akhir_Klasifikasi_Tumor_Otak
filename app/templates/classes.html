@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Informasi Kelas - Sistem Klasifikasi Tumor Otak{% endblock %}
+
+{% block content %}
+
+<section class="container my-5">
+    <h3 class="fw-bold mb-4">Informasi Kelas Prediksi</h3>
+
+    <div class="row g-4">
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold">Glioma</h5>
+                    <p class="text-muted">
+                        Glioma merupakan salah satu jenis tumor otak yang berasal dari sel glial.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold">Meningioma</h5>
+                    <p class="text-muted">
+                        Meningioma merupakan tumor yang tumbuh pada meninges, yaitu lapisan pelindung otak dan sumsum tulang belakang.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold">Pituitary</h5>
+                    <p class="text-muted">
+                        Pituitary tumor merupakan tumor yang terjadi pada kelenjar pituitari.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="fw-bold">No Tumor</h5>
+                    <p class="text-muted">
+                        Kelas no_tumor menunjukkan citra MRI yang tidak terdeteksi sebagai salah satu kelas tumor pada sistem.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="alert alert-warning mt-4">
+        Informasi pada halaman ini hanya bersifat umum. Hasil sistem tidak dapat digunakan sebagai diagnosis medis final.
+    </div>
+</section>
+
+{% endblock %}

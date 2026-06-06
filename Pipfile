@@ -4,6 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
+flask-cors = "*"
+pillow = "*"
+numpy = "*"
+tensorflow = "*"
 
 [dev-packages]
 

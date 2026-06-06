@@ -1,5 +1,5 @@
 import os
-from flask import Blueprint, request, jsonify, current_app
+from flask import Blueprint, request, jsonify, current_app, render_template
 from werkzeug.utils import secure_filename
 from app.utils import allowed_file
 from app.model_service import predict
@@ -7,11 +7,27 @@ from app.model_service import predict
 main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
+def home():
+    return render_template('index.html')
+
+@main.route('/predict', methods=['GET'])
+def predict_page():
+    return render_template('predict.html')
+
+@main.route('/about', methods=['GET'])
+def about_page():
+    return render_template('about.html')
+
+@main.route("/classes", methods=["GET"])
+def classes_page():
+    return render_template("classes.html")
+
+@main.route('/api/status', methods=['GET'])
 def index():
     return jsonify({"status": "berhasil",
                     "message": "API Klasifikasi Tumor Otak berjalan"})
     
-@main.route('/predict', methods=['POST'])
+@main.route('/api/predict', methods=['POST'])
 def predict_route():
     if "img" not in request.files:
         return jsonify({"status": "gagal",
