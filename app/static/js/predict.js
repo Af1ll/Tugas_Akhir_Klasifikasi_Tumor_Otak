@@ -73,7 +73,7 @@ predictForm.addEventListener("submit", async function (event) {
 
 
 function showResult(result) {
-    const prediction = formatClassName(result.prediction);
+    const prediction = formatClassName(result.predicted);
     const confidence = (result.confidence * 100).toFixed(2);
 
     predictionResult.innerText = prediction;
